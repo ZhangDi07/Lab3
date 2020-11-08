@@ -73,34 +73,28 @@ public  class People implements StudentManager,TeacherManager {
 		int have=salary*12-stufee*2;
 		
 		if(have<36000) {
-			int taxsum=(int) (have*0.03);
+			int taxsum=(int) ((have-36000)*0.03);
 			System.out.println("应交的税："+taxsum+"元");
 		}
 		else if(have<144000&&have>36000) {
-			int taxsum=(int) (have*0.01);
+			int taxsum=(int) (36000*0.03+(have-36000)*0.01);
 			System.out.println("应交的税："+taxsum+"元");
 		}
-		else if(have<300000&&have>144000) {
-			int taxsum=(int) (have*0.02);
-			System.out.println("应交的税："+taxsum+"元");
-		}
+		
 		//System.out.println("我是纳税额度"+taxsum);
 	}
 	public void tax(int stufee_2,int salary_2,String a ) {
 		int have=salary*12-stufee*2;
 		
 		if(have<36000) {
-			int taxsum=(int) (have*0.03);
+			int taxsum=(int) ((have-36000)*0.03);
 			System.out.println("第二个人应交的税："+taxsum+"元");
 		}
 		else if(have<144000&&have>36000) {
-			int taxsum=(int) (have*0.01);
+			int taxsum=(int) (36000*0.03+(have-36000)*0.01);
 			System.out.println("第二个人应交的税："+taxsum+"元");
 		}
-		else if(have<300000&&have>144000) {
-			int taxsum=(int) (have*0.02);
-			System.out.println("第二个人应交的税："+taxsum+"元");
-		}
+
 		//System.out.println("我是纳税额度"+taxsum);
 	}
 	

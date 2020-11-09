@@ -6,7 +6,7 @@ public  class People implements StudentManager,TeacherManager {
 	 private int age;
 	 private int stufee;
 	 private int salary;
-	private String taxsum;
+	 private double taxsum;
 	 public final static int TAXFEE=5000; //定义税率标准
 	 public  People() {
 		  
@@ -69,33 +69,28 @@ public  class People implements StudentManager,TeacherManager {
 		return 0;
 	}
 	//纳税额度的方法
-	public void tax(int stufee,int salary) {
-		int have=salary*12-stufee*2;
+	public void tax(int sa) {
 		
-		if(have<36000) {
-			int taxsum=(int) ((have-36000)*0.03);
-			System.out.println("应交的税："+taxsum+"元");
+	if(salary>0){
+		if(salary <=1500){
+			taxsum=salary*0.03;
+		}else if(salary<=4500){
+			taxsum=1500*0.03+(salary-1500)*0.1;
+		}else if(salary<=9000){
+			taxsum=1500*0.03+3000*0.1+(salary-4500)*0.2;
+		}else if(salary<=35000){
+			taxsum=1500*0.03+3000*0.1+4500*0.2+(salary-9000)*0.25;
+		}else if(salary<=55000){
+			taxsum=1500*0.03+3000*0.1+4500*0.2+26000*0.25+(salary-35000)*0.3;
+		}else if(salary<=80000){
+			taxsum=1500*0.03+3000*0.1+4500*0.2+26000*0.25+20000*0.3+(salary-55000)*0.35;
+		}else {
+			taxsum=1500*0.03+3000*0.1+4500*0.2+26000*0.25+20000*0.3+25000*0.35+(salary-80000)*0.45;
 		}
-		else if(have<144000&&have>36000) {
-			int taxsum=(int) (36000*0.03+(have-36000)*0.01);
-			System.out.println("应交的税："+taxsum+"元");
+		System.out.println("你应交的税为："+taxsum*12);
+		}else{
+		System.out.println("不交税！");
 		}
-		
-		//System.out.println("我是纳税额度"+taxsum);
-	}
-	public void tax(int stufee_2,int salary_2,String a ) {
-		int have=salary*12-stufee*2;
-		
-		if(have<36000) {
-			int taxsum=(int) ((have-36000)*0.03);
-			System.out.println("第二个人应交的税："+taxsum+"元");
-		}
-		else if(have<144000&&have>36000) {
-			int taxsum=(int) (36000*0.03+(have-36000)*0.01);
-			System.out.println("第二个人应交的税："+taxsum+"元");
-		}
-
-		//System.out.println("我是纳税额度"+taxsum);
-	}
 	
+	}
 }

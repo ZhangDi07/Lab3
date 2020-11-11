@@ -15,8 +15,10 @@
 
 ##实验过程  
 1.首先创建一个People类（主类）；再创建两个接口类，分别是StudentMnager和TeacherManager；在创建一个测试类。  
-2.在People类中定义了name、sex、age、stufee(学生学费)、salary(薪资)、taxsum(纳税额)等属性，还定义了一个final static类型的税率标准（TAXFEE=5000）  
-3.编写纳税方法，阶梯式纳税
+2.在People类中定义了name、sex、age、stufee(学生学费)、salary(薪资)、taxsum(纳税额)等属性，还定义了一个final static类型的税率标准（TAXFEE=5000)。写了构造方法和set、getf方法。
+编写纳税方法，采用阶梯式纳税  
+3.在StudentMnager和TeacherManager类中，定义了相关属性  
+4.在test类中利用try，catch捕获了年龄，学费，薪资的异常。当年龄输入负数或者文字时会抛出相关异常；当学费、薪资输入负数、文字等也会抛出有关异常。
 ##核心方法  
 ##运行结果  
 1.正常的运行结果  

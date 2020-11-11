@@ -14,12 +14,62 @@
 了解异常的使用方法，并在程序中根据输入情况做异常处理
 
 ##实验过程  
-1.首先创建一个People类（主类）；再创建两个接口类，分别是StudentMnager和TeacherManager；在创建一个测试类。  
-2.在People类中定义了name、sex、age、stufee(学生学费)、salary(薪资)、taxsum(纳税额)等属性，还定义了一个final static类型的税率标准（TAXFEE=5000)。写了构造方法和set、getf方法。
+1.首先创建两个接口类，分别是StudentMnager和TeacherManager；创建一个People类实现这两个接口，再创建一个测试类（主类）。  
+2.在两个接口中分别定义对应接口的方法，在People类中定义了name、sex、age、stufee(学生学费)、salary(薪资)、taxsum(纳税额)等属性，还定义了一个final static类型的税率标准（TAXFEE=5000)。写了构造方法和set、get方法并重写两个接口的方法。
 编写纳税方法，采用阶梯式纳税  
-3.在StudentMnager和TeacherManager类中，定义了相关属性  
-4.在test类中利用try，catch捕获了年龄，学费，薪资的异常。当年龄输入负数或者文字时会抛出相关异常；当学费、薪资输入负数、文字等也会抛出有关异常。
+3.在test类中利用try捕获了年龄，学费，薪资的异常。年龄、学费薪资不能输入非正或者文字，如进行输入会抛出异常
+
 ##核心方法  
+1.构造方法（无参、有参）
+```
+public  People() {
+		  
+	  }
+	 public  People(String name,String sex,int age,int stufee,int salary) {
+		  this.name=name;
+		  this.sex=sex;
+		  this.age=age;
+		  this.stufee=stufee;
+		  this.salary=salary;
+	  }
+  ```
+  2.纳税额度的方法
+  ```
+  public void tax(int sa) {
+		
+	if(salary>0){
+		if(salary <=1500){
+			taxsum=salary*0.03;
+		}else if(salary<=4500){
+			taxsum=1500*0.03+(salary-1500)*0.1;
+		}else if(salary<=9000){
+			taxsum=1500*0.03+3000*0.1+(salary-4500)*0.2;
+		}else if(salary<=35000){
+			taxsum=1500*0.03+3000*0.1+4500*0.2+(salary-9000)*0.25;
+		}else if(salary<=55000){
+			taxsum=1500*0.03+3000*0.1+4500*0.2+26000*0.25+(salary-35000)*0.3;
+		}else if(salary<=80000){
+			taxsum=1500*0.03+3000*0.1+4500*0.2+26000*0.25+20000*0.3+(salary-55000)*0.35;
+		}else {
+			taxsum=1500*0.03+3000*0.1+4500*0.2+26000*0.25+20000*0.3+25000*0.35+(salary-80000)*0.45;
+		}
+		System.out.println("你应交的税为："+taxsum*12);
+		}else{
+		System.out.println("不交税！");
+		}
+	
+	}
+  ```
+  3.抽象方法(StudentManager类)
+  ```
+  void payfee(int money);//交学费
+	int checkfee();//查学费
+  ```
+  4.抽象方法(TeacherManager类)
+  ```
+  void payroll(int salary);//发放薪水
+	int querysalary();//查询薪水
+  ```
 ##运行结果  
 1.正常的运行结果  
 ![alt console](http://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/TmEUgtj9EK6.7V8ajmQrEB*4icxt.xdxc7a4F2KHxfuLprWtWvROpYU4E4vbY2onWr3G6CDdrrXAxTrLKhxsdhPn5nU7eqQBRL8eTvCW30M!/b&bo=zwEnAgAAAAADF9k!&rf=viewer_4)  
@@ -28,4 +78,5 @@
 3.年龄输入错误的异常  
 ![alt console](http://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/TmEUgtj9EK6.7V8ajmQrEEhiEBNn2GFbEugeU80Iy1vJODDoqbOJUoqKs0ZrOej3gv*MVs11jlMe8gcNeNqFSr0YCTdGm.GJUASYkiblQ4A!/b&bo=AAJYAQAAAAADF2k!&rf=viewer_4)
 
-##实验感想
+##实验感想  
+通过本次实验，我学会了Java中抽象类和抽象方法的定义；掌握了Java中接口的定义，接口的定义形式以及接口的实现方法；会使用异常方法，并会在程序中根据输入情况做异常处理。但是在实验中遇到了很多问题，比如异常中无法在出问题的地方抛出和不能抛出异常等。不能抛出异常需要自定义一个异常，在相应位置即可解决，无法在出问题的地方抛出异常，是因为每一个代码块后边都要写一个自定义异常，这样抛出异常就可以终止程序。今后还需要更深入的学习JAVA编程~

@@ -16,7 +16,7 @@
 ##实验过程  
 1.首先创建一个People类（主类）；再创建两个接口类，分别是StudentMnager和TeacherManager；在创建一个测试类。  
 2.在People类中定义了name、sex、age、stufee(学生学费)、salary(薪资)、taxsum(纳税额)等属性，还定义了一个final static类型的税率标准（TAXFEE=5000）  
-3.
+3.编写纳税方法，阶梯式纳税
 ##核心方法  
 ##运行结果  
 1.正常的运行结果  

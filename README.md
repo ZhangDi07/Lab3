@@ -14,7 +14,16 @@
 了解异常的使用方法，并在程序中根据输入情况做异常处理
 
 ##实验过程  
-
+1.首先创建一个People类（主类）；再创建两个接口类，分别是StudentMnager和TeacherManager；在创建一个测试类。  
+2.在People类中定义了name、sex、age、stufee(学生学费)、salary(薪资)、taxsum(纳税额)等属性，还定义了一个final static类型的税率标准（TAXFEE=5000）  
+3.
 ##核心方法  
 ##运行结果  
+1.正常的运行结果  
+![alt console](http://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/TmEUgtj9EK6.7V8ajmQrEB*4icxt.xdxc7a4F2KHxfuLprWtWvROpYU4E4vbY2onWr3G6CDdrrXAxTrLKhxsdhPn5nU7eqQBRL8eTvCW30M!/b&bo=zwEnAgAAAAADF9k!&rf=viewer_4)  
+2.学费输入错误的异常  
+![alt console](http://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/TmEUgtj9EK6.7V8ajmQrEAibGImM37eldiWeaLju1m7MdBw.4oSZ8JSnMSQrGmHFQQoX3NCsCuERS.i3dntr5lwjDxJprrV.VLErmQ5Kh8E!/b&bo=mwGqAQAAAAADFwM!&rf=viewer_4)  
+3.年龄输入错误的异常  
+![alt console](http://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/TmEUgtj9EK6.7V8ajmQrEEhiEBNn2GFbEugeU80Iy1vJODDoqbOJUoqKs0ZrOej3gv*MVs11jlMe8gcNeNqFSr0YCTdGm.GJUASYkiblQ4A!/b&bo=AAJYAQAAAAADF2k!&rf=viewer_4)
+
 ##实验感想

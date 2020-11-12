@@ -70,7 +70,7 @@ public  class People implements StudentManager,TeacherManager {
 	}
 	//纳税额度的方法
 	public void tax(int sa) {
-		
+		salary=salary-TAXFEE;
 	if(salary>0){
 		if(salary <=1500){
 			taxsum=salary*0.03;

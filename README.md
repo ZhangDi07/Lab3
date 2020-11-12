@@ -36,7 +36,7 @@ public  People() {
   2.纳税额度的方法
   ```
   public void tax(int sa) {
-		
+		salary=salary-TAXFEE;
 	if(salary>0){
 		if(salary <=1500){
 			taxsum=salary*0.03;
@@ -72,7 +72,7 @@ public  People() {
   ```
 ##运行结果  
 1.正常的运行结果  
-![alt console](http://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/TmEUgtj9EK6.7V8ajmQrEB*4icxt.xdxc7a4F2KHxfuLprWtWvROpYU4E4vbY2onWr3G6CDdrrXAxTrLKhxsdhPn5nU7eqQBRL8eTvCW30M!/b&bo=zwEnAgAAAAADF9k!&rf=viewer_4)  
+![alt console](https://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/bqQfVz5yrrGYSXMvKr.cqVXHf29vbrPikIXaCpZoBh7scuc**22eqKC8KIbPIyvzCWZdVB9*KifTx2ZJqnaDQPZe6yyM6IHmXXSF2cWBUh4!/b&bo=bwEzAgAAAAADB30!&rf=viewer_4)  
 2.学费输入错误的异常  
 ![alt console](http://m.qpic.cn/psc?/V50ini880vFPiW2LYxFK2RoQRD3UEErn/TmEUgtj9EK6.7V8ajmQrEAibGImM37eldiWeaLju1m7MdBw.4oSZ8JSnMSQrGmHFQQoX3NCsCuERS.i3dntr5lwjDxJprrV.VLErmQ5Kh8E!/b&bo=mwGqAQAAAAADFwM!&rf=viewer_4)  
 3.年龄输入错误的异常  
